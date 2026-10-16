@@ -1,0 +1,448 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --burgundy: #8f2949;
+    --pink: #d65b80;
+    --light-pink: #f0bfd0;
+    --background: #fff4f7;
+    --text: #63283e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #8f2949, #d65b80);
+    color: white;
+    text-align: center;
+    padding: 38px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 7px;
+}
+
+header p {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.sakura {
+    position: absolute;
+    color: #ffdce7;
+    font-size: 55px;
+    opacity: 0.7;
+}
+
+.kiri {
+    left: 8%;
+    top: 15px;
+}
+
+.kanan {
+    right: 8%;
+    bottom: 10px;
+}
+
+/* MAIN */
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 18px 45px;
+}
+
+.judul {
+    text-align: center;
+    margin: 20px 0 45px;
+}
+
+.label {
+    font-size: 11px;
+    color: var(--pink);
+    letter-spacing: 4px;
+}
+
+.judul h2 {
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.judul p {
+    color: #986678;
+}
+
+.hiasan {
+    color: var(--pink);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.bagian {
+    margin-bottom: 55px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-title h2 {
+    font-size: 23px;
+}
+
+.section-title p {
+    color: #986678;
+    font-size: 13px;
+}
+
+/* FAMILY TREE */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parents {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.member {
+    width: 180px;
+    padding: 10px;
+    background: white;
+    border: 2px solid #e8a1b7;
+    border-radius: 17px;
+    text-align: center;
+    box-shadow: 0 5px 15px #8b35551a;
+    transition: 0.2s;
+    min-width: 0;
+}
+
+.member:hover {
+    border-color: var(--burgundy);
+    transform: translateY(-3px);
+}
+
+.member[open] {
+    background: #fff0f5;
+    border-color: var(--burgundy);
+}
+
+.member summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.member summary::-webkit-details-marker {
+    display: none;
+}
+
+.member img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 11px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.member h3 {
+    font-size: 22px;
+    color: var(--burgundy);
+}
+
+.member summary p {
+    font-size: 12px;
+    color: #986678;
+}
+
+.peran {
+    font-size: 11px;
+    color: #986678;
+}
+
+.klik {
+    display: block;
+    color: var(--pink);
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.desc {
+    border-top: 1px solid var(--light-pink);
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* CONNECTING LINES */
+.parent-line,
+.children-stem {
+    width: 2px;
+    height: 25px;
+    background: #c45c7d;
+}
+
+.parent-bridge {
+    width: 204px;
+    height: 2px;
+    background: #c45c7d;
+}
+
+.children-bridge {
+    width: min(650px, 72%);
+    height: 2px;
+    background: #c45c7d;
+}
+
+.children {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.children .member {
+    width: 180px;
+    position: relative;
+}
+
+.children .member::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 25px;
+    background: #c45c7d;
+    top: -27px;
+    left: 50%;
+}
+
+.petunjuk {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 11px;
+    color: #b78396;
+}
+
+/* FAMILY STORY */
+.narasi {
+    max-width: 780px;
+    margin: auto;
+    background: white;
+    border: 1px solid var(--light-pink);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 18px #8b355511;
+    text-align: center;
+}
+
+.bunga {
+    font-size: 30px;
+    color: var(--pink);
+    margin-bottom: 12px;
+}
+
+.narasi p {
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 16px;
+}
+
+.penutup {
+    color: var(--burgundy);
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* FAMILY PROFILES */
+.profil-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid var(--light-pink);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 13px #8b35550c;
+    min-width: 0;
+}
+
+.profil img {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.profil div {
+    min-width: 0;
+}
+
+.profil h3 {
+    color: var(--burgundy);
+    font-size: 19px;
+}
+
+.profil p {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.profil .romaji {
+    color: #986678;
+    margin-bottom: 4px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--burgundy);
+    color: #ffeaf0;
+    text-align: center;
+    padding: 22px 12px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.footer-text {
+    color: #f7c8d7;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    main {
+        padding: 20px 12px 35px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .sakura {
+        font-size: 36px;
+    }
+
+    .judul h2 {
+        font-size: 24px;
+    }
+
+    .parents {
+        gap: 12px;
+    }
+
+    .parents .member {
+        width: min(42vw, 165px);
+    }
+
+    .member {
+        padding: 7px;
+        border-radius: 13px;
+    }
+
+    .member img {
+        height: 100px;
+    }
+
+    .member h3 {
+        font-size: 19px;
+    }
+
+    .parent-bridge {
+        width: 155px;
+    }
+
+    .children {
+        gap: 8px;
+    }
+
+    .children .member {
+        width: 100%;
+        padding: 6px;
+    }
+
+    .children .member img {
+        height: 75px;
+    }
+
+    .children .member h3 {
+        font-size: 16px;
+    }
+
+    .children .member summary p {
+        font-size: 10px;
+    }
+
+    .peran,
+    .klik {
+        font-size: 9px;
+    }
+
+    .children .desc {
+        font-size: 10px;
+    }
+
+    .narasi {
+        padding: 22px 16px;
+    }
+
+    .narasi p {
+        font-size: 12px;
+    }
+
+    .profil-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profil img {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 370px) {
+    .children {
+        gap: 5px;
+    }
+
+    .children .member {
+        padding: 4px;
+    }
+
+    .children .member img {
+        height: 60px;
+    }
+
+    .children .member h3 {
+        font-size: 14px;
+    }
+}
